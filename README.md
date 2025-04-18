@@ -1,4 +1,4 @@
-<h1>Active Directory Lab: Setting up users</h1>
+![image](https://github.com/user-attachments/assets/49efe0fd-d5ae-47e5-9444-aec5be3be4bd)<h1>Active Directory Lab: Setting up users</h1>
 
 
 
@@ -47,6 +47,84 @@ Here you can see both virtual computer instances getting a DHCP address from PFs
 <br />
 After joining the domain, use the helpdesk username and password created earlier. From there head into Settings, system, and add optional features. From there add the RSAT features pertaining to a helpdesk user, giving access to the various tools needed by the user.    <br/>
 <img src="https://i.imgur.com/W2xWDdd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Now we can set up group policy management. Head into tools on server manager and click on group policy management. Click on the domain controller name, highlioght default domain policy, right click and hit edit. 
+<img src="https://i.imgur.com/VIoy16I.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Now click on policies, windows settings, and security settings. Here we can change a wide range of policies relating to the domain. 
+<img src="https://i.imgur.com/6Nanwtr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Go to account policies and we can change account lockout threshold. 
+<img src="https://i.imgur.com/4AKpLpS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+
+<img src="https://i.imgur.com/u62R9ZQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+I changed mine to 5 invalid attempts and locking the computer for 30 minutes if the condition is true. 
+<img src="https://i.imgur.com/X8R9qNX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Back in users and computers, I want to begin setting up the OUs and the new user. 
+Right click testserver, go to new, and create a new OU called HR and another for IT. 
+<br/>
+<img src="https://i.imgur.com/ysXwPTa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Now create a new user, I named it charles and set a password. 
+<img src="https://i.imgur.com/5ZbTOnC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Now I move the users into their correct OU, based on their role.
+<img src="https://i.imgur.com/HhWVkEk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+
+<img src="https://i.imgur.com/Prfedoh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Setting up a new virtual machine for the user I created, I add them to the domain using the same steps as the other user.
+<img src="https://i.imgur.com/ulLShXG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+After restarting I hit other user and login using the username and password I created for the new user. 
+<img src="https://i.imgur.com/EylG7pZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<br/>
+<br/>
+Now we can go into File and storage services and add two new shares personal and HR
+<img src="https://i.imgur.com/vZt2DRQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Then go back to users and computers and create two new groups inside the users folder named HR and Personal
+<img src="https://i.imgur.com/egqFdpx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Then change the permissions of the folders to allow the group to have read/write access to the folders
+<img src="https://i.imgur.com/CkKDNU4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Add the user to the security groups
+<img src="https://i.imgur.com/0yXHSTh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Now we can map the drive to charles personal computer
+<img src="https://i.imgur.com/Ap6p5ZI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Go back to users and computers and in charles properties, connect it to the personal folder
+<img src="https://i.imgur.com/QJeXihe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+Here we can see both the personal and HR folder show up on charles computer.
+<img src="https://i.imgur.com/dPn5lTY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<br/>
+</p>
 </p>
 
 <!--
