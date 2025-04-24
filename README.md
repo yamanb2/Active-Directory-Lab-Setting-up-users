@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/49efe0fd-d5ae-47e5-9444-aec5be3be4bd)<h1>Active Directory Lab: Setting up users</h1>
+<h1>Active Directory Lab: Setting up users</h1>
 
 
 
